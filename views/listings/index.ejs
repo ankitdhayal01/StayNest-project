@@ -1,0 +1,29 @@
+<% layout('/listings/layouts/boilerplate') -%> 
+
+<% let listingsToShow = typeof allListings !== "undefined" ? allListings : listings; %>
+
+
+<div class="container mt-3">
+    <h3>StayNest near your > </h3>
+    <br>
+    <% if (listingsToShow.length === 0) { %>
+        <h4>No listings found.</h4>
+    <% } else { %>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
+            <% for (let listing of listingsToShow) { %>
+            <a href="/listings/<%= listing._id %>" class="listing-link text-decoration-none text-dark">
+                <div class="card col h-100">
+                    <img src="<%= listing.image?.url || listing.image %>" alt="<%= listing.title %>" class="card-img-top" style="height: 20rem; object-fit: cover;" />
+                    <div class="card-img-overlay "><i class="fa-regular fa-heart"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%= listing.title %></h5>
+                        <p class="card-text">₹ <%= Number(listing.price).toLocaleString("en-IN") %>/night</p>
+                        <p class="card-text"><%= listing.location %></p>
+                    </div>
+                </div>
+            </a>
+            <% } %>
+        </div>
+    <% } %>
+</div>
+

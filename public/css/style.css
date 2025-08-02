@@ -1,0 +1,156 @@
+body
+{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.container
+{
+    flex: 1;
+}
+/*navbar*/
+.navbar
+{
+    
+    background-color: #FAF9F6;
+    
+}
+.fa-compass
+{
+    color:#fe424d;
+    font-size: 2rem;
+     
+}
+.nav-link
+{
+    color: #222222 !important;
+}
+/*footer*/
+footer .f-info-links a {
+    color: #222 !important;
+    text-decoration: none !important;
+}
+
+footer .f-info-links a:hover {
+    text-decoration: underline !important;
+}
+footer .f-info-links 
+{
+    width: 100%;
+    vertical-align: middle;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+footer .f-info-socials,.f-info-brand
+{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer .f-info-socials i{
+     font-size: 1.2rem;
+    margin-right: 2rem;
+
+}
+
+footer .f-info{
+    text-align: center;
+    height:8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: space-evenly;
+
+}
+/*cards*/
+.card
+{
+    border: none !important;
+    margin-bottom: 2rem;
+
+}
+.card-img-top
+{
+    border-radius: 1rem    !important;
+    width: 100% !important;
+    object-fit: cover !important;
+     
+}
+.card-text p{
+    font-weight: 400;
+}
+.listing-link
+{
+    text-decoration: none !important;
+}
+.card-img-overlay
+{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.show-img
+{
+    border-radius: 2rem;
+    margin: 1rem 0 1rem 0;
+   
+    
+}
+/* new page */
+.add-btn
+{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+.btns{
+    display: flex;
+    height: 32px !important;
+    margin-bottom: 2rem;
+}
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  font-family: 'Arvo', serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+  margin-left: 6rem;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
