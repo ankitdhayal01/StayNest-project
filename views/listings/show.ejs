@@ -3,7 +3,7 @@
 <body>
     <div class="container mt-4">
         <h3><%= listing.title %></h3>
-        <img src="<%= listing.image %>"  height="400px" class="mb-3 rounded" alt="Listing image" />
+        <img src="<%=listing.image?.url || listing.image %>"  height="400px" class="mb-3 rounded" alt="Listing image" />
 
         
         <p><strong>Description:</strong> <%= listing.description %></p>
