@@ -89,7 +89,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
-    res.locals.currentUser = req.user;
+    res.locals.currentUser = req.user || null;
     next();
 });
 
@@ -117,6 +117,9 @@ app.post("/search", (req, res) => {
               <p><strong>Destination:</strong> ${where}</p>
               <p><strong>Date:</strong> ${date}</p>
               <p><strong>Guests:</strong> ${who}</p>`);
+});
+app.get("/", (req, res) => {
+    res.redirect("/listings");
 });
 
 // 404 handler

@@ -1,76 +1,48 @@
 <style>
-  .onlyfilter {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-left: 19rem;
+    .navbar-custom {
+      padding: 0.5rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    gap: 4rem;
+    .navbar-toggler {
+      margin-left: auto;
+    }
 
-  }
+    .navbar-nav .nav-link {
+      margin-left: 2rem;
+      text-align: center;
+    }
 
-  .flex {
-    display: flex;
-    gap: 5px;
-  }
+    .nav-filter {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      margin-left: 1.5rem;
+    }
 
-  .jutify {
-    display: flex; 
-    align-items: start;
-    justify-content: space-between;
-    width: 60%;
-  }
-  .margin-l {
-    position: relative;
-    left: 260px;
-  }
+    .nav-filter:hover {
+      opacity: 1;
+    }
 
-  .filter {
-    text-align: center;
-    opacity: 0.7;
-    transition: opacity 0.3s;
-  }
+    .filters {
+      margin-left: 15rem;
+      display: flex;
+    }
 
-  .filter:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  .items-start{
-    display: flex;
-    align-items: start;
-    justify-content: start;
-  }
-  
-  .navbar-brand
-  {
-    margin-left: 1.5rem;
-    
-   
-    
-  }
-  
-  .navbar-nav{
-    margin-right: -12rem;
-    
-  }
-  .btn-class
-  {
-    background-color: #fe424d;
-    border-radius: 3rem;
-    color: #fff;
-  }
-  .btn-class:hover{
-    background-color: #fe424d;
-    color: #fff;
-
-  }
-  .search-bar-custom {
+    .search-bar-custom {
+      position: sticky;
+      top: 70px;
+      z-index: 1020;
+      background-color: #f8f9fa;
+      padding: 0.5rem 0;
       display: flex;
       justify-content: center;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      width: 100%;
-      margin-left: 6rem;
     }
 
     .search-pill {
@@ -81,7 +53,8 @@
       padding: 10px 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       gap: 25px;
-      min-width: 700px;
+      width: 100%;
+      max-width: 800px;
     }
 
     .search-section {
@@ -102,6 +75,7 @@
       color: #555;
       margin-top: 3px;
       background: none;
+      width: 100%;
     }
 
     .divider {
@@ -126,80 +100,102 @@
       font-size: 16px;
     }
 
-</style>
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="jutify">
-    <div class="items-start">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    @media (max-width: 768px) {
+      .search-pill {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        max-width: 100%;
+      }
 
-      <div class="navbar-nav ms-auto">
-        <div class="filters">
-          <div class="onlyfilter">
-            <div class="filter">
-              <div class="icon"><a href="/listings"><i class="fa-solid fa-house"></i></a></div>
-              <p>Home</p>
-            </div>
-            <div class="filter">
-              <div class="icon"><a href="/experience"><i class="fa-solid fa-car-side"></i></a></div>
-              <p>Experience</p>
-            </div>
-            <div class="filter">
-              <div class="icon"><a href="/service"><i class="fa-solid fa-bell-concierge"></i></a></div>
-              <p>Services</p>
-            </div>
+      .divider {
+        display: none;
+      }
+
+      .search-section {
+        width: 100%;
+      }
+
+      .filters {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ✅ NAVIGATION BAR -->
+  <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid navbar-custom">
+      <!-- Brand -->
+      <a class="navbar-brand" href="/listings">
+        <i class="fa-regular fa-compass"></i>
+      </a>
+
+      <!-- Toggler (for small screens) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Section -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+        <!-- Navigation Filters -->
+        <div class="navbar-nav d-flex flex-row">
+          <div class="filters">
+            <a class="nav-link nav-filter" href="/listings">
+              <i class="fa-solid fa-house"></i>
+              <small>Home</small>
+            </a>
+            <a class="nav-link nav-filter" href="/experience">
+              <i class="fa-solid fa-car-side"></i>
+              <small>Experience</small>
+            </a>
+            <a class="nav-link nav-filter" href="/service">
+              <i class="fa-solid fa-bell-concierge"></i>
+              <small>Services</small>
+            </a>
           </div>
-<div class="search-bar-custom">
-            <form class="search-pill" action="/listings" method="GET">
-  <div class="search-section">
-    <label>Where</label>
-    <input type="text" name="location" placeholder="Search destinations" />
-  </div>
-              <div class="divider"></div>
-            <div class="search-section">
-            <label>Date</label>
-               <input type="text" name="date" id="datepicker" placeholder="Add dates" />
-                  </div>
-
-              <div class="divider"></div>
-              <div class="search-section">
-                <label>Who</label>
-                <input type="text" placeholder="Add guests" />
-              </div>
-             <button type="submit" class="search-icon-btn">
-    <i class="fas fa-search"></i>
-  </button>
-</form>
-
-          </div>
-
         </div>
 
+        <!-- Auth Links -->
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="/listings/new">Become a host</a>
+          <% if (typeof currentUser === 'undefined' || !currentUser) { %>
+            <a class="nav-link" href="/signup"><b>Signup</b></a>
+            <a class="nav-link" href="/login"><b>Login</b></a>
+          <% } else { %>
+            <a class="nav-link" href="/logout"><b>Logout</b></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-
+  <!-- ✅ STICKY SEARCH BAR -->
+  <div class="search-bar-custom">
+    <form class="search-pill" action="/listings" method="GET">
+      <div class="search-section">
+        <label>Where</label>
+        <input type="text" name="location" placeholder="Search destinations" />
       </div>
 
+      <div class="divider"></div>
 
+      <div class="search-section">
+        <label>Date</label>
+        <input type="text" name="date" id="datepicker" placeholder="Add dates" />
+      </div>
 
+      <div class="divider"></div>
 
-    </div>
-    <div class="navbar-nav ms-auto margin-l">
-      <a class="nav-link" href="/listings/new">Become a host</a>
-      <%if(!currentUser) {%>
-        <a class="nav-link" aria-current="page" href="/signup"><b>Signup</b></a>
-        <a class="nav-link" href="/login"><b>Login</b></a>
-        <%}%>
-          <%if(currentUser) {%>
-            <a class="nav-link" href="/logout"><b>Logout</b></a>
-            <%}%>
+      <div class="search-section">
+        <label>Who</label>
+        <input type="text" placeholder="Add guests" />
+      </div>
 
-    </div>
+      <button type="submit" class="search-icon-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
   </div>
-</nav>

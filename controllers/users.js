@@ -10,7 +10,7 @@ module.exports.signupuser=async(req,res)=>
     const newUser=new User({email,username});
     const registeredUser=await User.register(newUser,password);
     console.log(registeredUser);
-    req.flash("success","Welcome to wanderlust");
+    req.flash("success","Welcome to StayNest");
     res.redirect("/login");
     } catch(e)
     {
@@ -25,7 +25,7 @@ module.exports.renderloginform=(req,res)=>
 };
 module.exports.loginuser=async(req,res)=>
 {
-    req.flash("success","welcome back to wanderlust!");
+    req.flash("success","welcome back to StayNest");
     const redirectUrl = res.locals.redirectUrl 
      res.redirect(redirectUrl);
 
